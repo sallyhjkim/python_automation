@@ -30,5 +30,6 @@ for file_name in lingda_files:
     source_dir = os.path.join(DOWNLOAD_DIR, file_name)
     target_dir = os.path.join(lingoda_path, lv, f'{chapter[0]}.{chapter[2]}')
     os.makedirs(target_dir, exist_ok=True)
-    shutil.move(source_dir, target_dir)
+    shutil.copy(source_dir, target_dir)
+    os.remove(source_dir)
 print('Done!')
